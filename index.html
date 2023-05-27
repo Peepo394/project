@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>About Weather</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@300&display=swap" rel="stylesheet">
+<style type="text/css">
+    body{
+        font-family: 'Fahkwang', sans-serif;
+    }
+</style>
+
+<style>
+  div.scrollmenu {
+     width: 1100px;
+     margin: auto;
+     
+   }
+  </style>
+  <style>
+     div.scrollmenu {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+     }
+        
+     div.scrollmenu a {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+     }
+        
+     /* div.scrollmenu a:hover {
+        background-color: #777;
+     } */
+  </style>
+<style>
+   
+  div.scroll {
+      margin: 6px, 6px;
+      padding: 5px;
+      width: 1150px;
+      height: 400px;
+      overflow: auto;
+      justify-content: center;
+      align-items: normal;
+      white-space: nowrap;
+    }
+  .scrollable-menu {
+      height: auto;
+      max-height: 200px;
+      overflow-x: hidden;
+    }
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body id="myPage">
+
+<!-- Sidebar on click -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
+    <i class="fa fa-remove"></i>
+  </a>
+  <a href="#" class="w3-bar-item w3-button">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+  <a href="#" class="w3-bar-item w3-button">Link 4</a>
+  <a href="#" class="w3-bar-item w3-button">Link 5</a>
+</nav>
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>หน้าแรก</a>
+  <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">สภาพอากาศปัจจุบัน</a>
+  <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">พยากรณ์อากาศ 7 วัน</a>
+  <a href="#pricing" class="w3-bar-item w3-button w3-hide-small w3-hover-white">เส้นทางเดินพายุ</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">แผ่นดินไหว</a>
+  </div>
+ </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+    <a href="#team" class="w3-bar-item w3-button">หน้าแรก</a>
+    <a href="#work" class="w3-bar-item w3-button">สภาพอากาศปัจจุบัน</a>
+    <a href="#pricing" class="w3-bar-item w3-button">พยากรณ์อากาศ 7 วัน</a>
+    <a href="#contact" class="w3-bar-item w3-button">แผ่นดินไหว</a>
+    
+  </div>
+</div>
+
+<!-- Image Header -->
+<div class="w3-display-container w3-animate-opacity">
+  <img src="wallpaperflare.com_wallpaper (1).jpg" alt="boat" style="width:100%;min-height:350px;max-height:720px;">
+  <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
+    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">Information</button>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content w3-card-4 w3-animate-top">
+    <header class="w3-container w3-teal w3-display-container"> 
+      <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+      <h4>ข้อมูลเบื้องต้นของเว็บไซต์</h4>
+    </header>
+    <div class="w3-container">
+      <p>เว็บไซต์นี้จัดทำขึ้นเพื่อเป็น Project สำหรับงานชิ้นสุดท้ายของรายวิชา GE344</p>
+    </div>
+    <footer class="w3-container w3-teal">
+      <p>อ้างอิงข้อมูลทั้งหมดจาก : https://www.tmd.go.th/</p>
+    </footer>
+  </div>
+</div>
+
+<!-- Team Container -->
+<div class="w3-container w3-padding-64 w3-center" id="team" style="width:100%;height:745px; ">
+<h2>Weather</h2>
+<p>สภาพอากาศปัจจุบัน</p>
+
+<br>
+<br>
+<div class="w3-row"><br>
+
+<div class="w3-quarter">
+    <iframe src="https://www.tmd.go.th/TodayWeatherWidget?province=กรุงเทพมหานคร" height="350" scrolling="no" frameborder="0"></iframe>
+</div>
+
+<div class="w3-quarter">
+    <iframe src="https://www.tmd.go.th/TodayWeatherWidget?province=นครราชสีมา" height="350" scrolling="no" frameborder="0"></iframe>
+</div>
+
+<div class="w3-quarter">
+    <iframe src="https://www.tmd.go.th/TodayWeatherWidget?province=อุบลราชธานี" height="350" scrolling="no" frameborder="0"></iframe>
+  
+</div>
+
+<div class="w3-quarter">
+    <iframe src="https://www.tmd.go.th/TodayWeatherWidget?province=ขอนแก่น" height="350" scrolling="no" frameborder="0"></iframe>
+</div>
+
+</div>
+</div>
+
+<!-- Work Row -->
+<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work" style="width:100%;height:745px;">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="w3-quarter" >
+    <h2>Forcast Weather</h2>
+    <p>พยากรณ์อากาศ 7 วัน</p>
+    <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" height="400" width="1070" >เลือกจังหวัด
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu scrollable-menu" >
+        <li><a href="#กระบี่">กระบี่</a></li>
+        <li><a href="#กรุงเทพมหานคร">กรุงเทพมหานคร</a></li>
+        <li><a href="#กาญจนบุรี">กาญจนบุรี</a></li>
+        <li><a href="#กาฬสินธุ์">กาฬสินธุ์</a></li>
+        <li><a href="#กำแพงเพชร">กำแพงเพชร</a></li>
+        <li><a href="#เกาะสมุย (สุราษฎร์ธานี)">เกาะสมุย (สุราษฎร์ธานี)</a></li>
+        <li><a href="#จันทบุรี">จันทบุรี</a></li>
+        <li><a href="#ฉะเชิงเทรา">ฉะเชิงเทรา</a></li>
+        <li><a href="#ชลบุรี">ชลบุรี</a></li>
+        <li><a href="#ชัยนาท">ชัยนาท</a></li>
+        <li><a href="#ชัยภูมิ">ชัยภูมิ</a></li>
+        <li><a href="#ชุมพร">ชุมพร</a></li>
+        <li><a href="#เชียงราย">เชียงราย</a></li>
+        <li><a href="#เชียงใหม่">เชียงใหม่</a></li>
+        <li><a href="#ตรัง">ตรัง</a></li>
+        <li><a href="#ตราด">ตราด</a></li>
+        <li><a href="#ตาก">ตาก</a></li>
+        <li><a href="#นครนายก">นครนายก</a></li>
+        <li><a href="#นครปฐม">นครปฐม</a></li>
+        <li><a href="#นครพนม">นครพนม</a></li>
+        <li><a href="#นครราชสีมา">นครราชสีมา</a></li>
+        <li><a href="#นครศรีธรรมราช">นครศรีธรรมราช</a></li>
+        <li><a href="#นครสวรรค์">นครสวรรค์</a></li>
+        <li><a href="#นนทบุรี">นนทบุรี</a></li>
+        <li><a href="#นราธิวาส">นราธิวาส</a></li>
+        <li><a href="#น่าน">น่าน</a></li>
+        <li><a href="#บึงกาฬ">บึงกาฬ</a></li>
+        <li><a href="#บุรีรัมย์">บุรีรัมย์</a></li>
+        <li><a href="#ปทุมธานี">ปทุมธานี</a></li>
+        <li><a href="#ประจวบคีรีขันธ์">ประจวบคีรีขันธ์</a></li>
+        <li><a href="#ปราจีนบุรี">ปราจีนบุรี</a></li>
+        <li><a href="#ปัตตานี">ปัตตานี</a></li>
+        <li><a href="#พระนครศรีอยุธยา">พระนครศรีอยุธยา</a></li>
+        <li><a href="#พะเยา">พะเยา</a></li>
+        <li><a href="#พังงา">พังงา</a></li>
+        <li><a href="#พัทยา">พัทยา</a></li>
+        <li><a href="#พัทลุง">พัทลุง</a></li>
+        <li><a href="#พิจิตร">พิจิตร</a></li>
+        <li><a href="#พิษณุโลก">พิษณุโลก</a></li>
+        <li><a href="#เพชรบุรี">เพชรบุรี</a></li>
+        <li><a href="#เพชรบูรณ์">เพชรบูรณ์</a></li>
+        <li><a href="#แพร่">แพร่</a></li>
+        <li><a href="#ภูเก็ต">ภูเก็ต</a></li>
+        <li><a href="#มหาสารคาม">มหาสารคาม</a></li>
+        <li><a href="#มุกดาหาร">มุกดาหาร</a></li>
+        <li><a href="#แม่ฮ่องสอน">แม่ฮ่องสอน</a></li>
+        <li><a href="#ยโสธร">ยโสธร</a></li>
+        <li><a href="#ยะลา">ยะลา</a></li>
+        <li><a href="#ร้อยเอ็ด">ร้อยเอ็ด</a></li>
+        <li><a href="#ระนอง">ระนอง</a></li>
+        <li><a href="#ระยอง">ระยอง</a></li>
+        <li><a href="#ราชบุรี">ราชบุรี</a></li>
+        <li><a href="#ลพบุรี">ลพบุรี</a></li>
+        <li><a href="#ลำปาง">ลำปาง</a></li>
+        <li><a href="#ลำพูน">ลำพูน</a></li>
+        <li><a href="#เลย">เลย</a></li>
+        <li><a href="#ศรีสะเกษ">ศรีสะเกษ</a></li>
+        <li><a href="#สกลนคร">สกลนคร</a></li>
+        <li><a href="#สงขลา">สงขลา</a></li>
+        <li><a href="#สตูล">สตูล</a></li>
+        <li><a href="#สมุทรปราการ">สมุทรปราการ</a></li>
+        <li><a href="#สมุทรสงคราม">สมุทรสงคราม</a></li>
+        <li><a href="#สมุทรสาคร">สมุทรสาคร</a></li>
+        <li><a href="#สระแก้ว">สระแก้ว</a></li>
+        <li><a href="#สระบุรี">สระบุรี</a></li>
+        <li><a href="#สิงห์บุรี">สิงห์บุรี</a></li>
+        <li><a href="#สุโขทัย">สุโขทัย</a></li>
+        <li><a href="#สุพรรณบุรี">สุพรรณบุรี</a></li>
+        <li><a href="#สุราษฎร์ธานี">สุราษฎร์ธานี</a></li>
+        <li><a href="#สุรินทร์">สุรินทร์</a></li>
+        <li><a href="#หนองคาย">หนองคาย</a></li>
+        <li><a href="#หนองบัวลำภู">หนองบัวลำภูรี</a></li>
+        <li><a href="#หัวหิน (ประจวบคีรีขันธ์)">หัวหิน (ประจวบคีรีขันธ์)</a></li>
+        <li><a href="#หาดใหญ่">หาดใหญ่</a></li>
+        <li><a href="#อ่างทอง">อ่างทอง</a></li>
+        <li><a href="#อำนาจเจริญ">อำนาจเจริญ</a></li>
+        <li><a href="#อุดรธานี">อุดรธานี</a></li>
+        <li><a href="#อุตรดิตถ์">อุตรดิตถ์</a></li>
+        <li><a href="#อุทัยธานี">อุทัยธานี</a></li>
+        <li><a href="#อุบลราชธานี">อุบลราชธานี</a></li>
+ 
+      </ul>
+    </div>
+ 
+  </div>
+
+
+
+
+  <div class="w3-rest">
+    <div class="scroll" id ="content">
+      <a href="#กระบี่" id = "กระบี่"><br><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=กระบี่" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#กรุงเทพมหานคร" id ="กรุงเทพมหานคร"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=กรุงเทพมหานคร" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#กาญจนบุรี" id = "กาญจนบุรี"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=กาญจนบุรี" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#กาฬสินธุ์" id = "กาฬสินธุ์"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=กาฬสินธุ์" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#กำแพงเพชร" id = "กำแพงเพชร"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=กำแพงเพชร" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#เกาะสมุย (สุราษฎร์ธานี)" id = "เกาะสมุย (สุราษฎร์ธานี)"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=เกาะสมุย (สุราษฎร์ธานี)" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#ขอนแก่น" id = "ขอนแก่น"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=ขอนแก่น" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#จันทบุรี" id = "จันทบุรี"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=จันทบุรี" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#ฉะเชิงเทรา" id = "ฉะเชิงเทรา"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=ฉะเชิงเทรา" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#ชลบุรี" id = "ชลบุรี"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=ชลบุรี" height="400" width="1120 scrolling="no" frameborder="0"></iframe></a>
+      <a href="#ชัยนาท" id = "ชัยนาท"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=ชัยนาท" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#ชัยภูมิ" id = "ชัยภูมิ"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=ชัยภูมิ" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#ชุมพร" id = "ชุมพร"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=ชุมพร" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#เชียงราย" id = "เชียงราย"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=เชียงราย" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#เชียงใหม่" id = "เชียงใหม่"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=เชียงใหม่" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#ตรัง" id = "ตรัง"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=ตรัง" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#ตราด" id = "ตราด"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=ตราด" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#ตาก" id = "ตาก"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=ตาก" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#นครนายก" id = "นครนายก"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=นครนายก" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#นครปฐม" id = "นครปฐม"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=นครปฐม" height="400" width="1120" scrolling="no" frameborder="0"></iframe>/a>
+      <a href="#นครพนม" id = "นครพนม"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=นครพนม" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#นครราชสีมา" id = "นครราชสีมา"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=นครราชสีมา" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#นครศรีธรรมราช" id = "นครศรีธรรมราช"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=นครศรีธรรมราช" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#นครสวรรค์" id = "นครสวรรค์"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=นครสวรรค์" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#นนทบุรี" id = "นนทบุรี"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=นนทบุรี" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#นราธิวาส" id = "นราธิวาส"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=นราธิวาส" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#น่าน" id = "น่าน"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=น่าน" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#บึงกาฬ" id = "บึงกาฬ"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=บึงกาฬ" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#บุรีรัมย์" id = "บุรีรัมย์"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=บุรีรัมย์" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#ปทุมธานี" id = "ปทุมธานี"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=ปทุมธานี" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#ประจวบคีรีขันธ์" id = "ประจวบคีรีขันธ์"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=ประจวบคีรีขันธ์" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#ปราจีนบุรี" id = "ปราจีนบุรี"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=ปราจีนบุรี" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#ปัตตานี" id = "ปัตตานี"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=ปัตตานี" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#พระนครศรีอยุธยา" id = "พระนครศรีอยุธยา"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=พระนครศรีอยุธยา" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#พะเยา" id = "พะเยา"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=พะเยา" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#พังงา" id = "พังงา"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=พังงา" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#พัทยา" id = "พัทยา"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=พัทยา" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#พัทลุง" id = "พัทลุง"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=พัทลุง" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#พิจิตร" id = "พิจิตร"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=พิจิตร" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#พิษณุโลก" id = "พิษณุโลก"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=พิษณุโลก" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#เพชรบุรี" id = "เพชรบุรี"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=เพชรบุรี" height="400" width="1120" scrolling="no" frameborder="0"></iframe>/a>
+      <a href="#เพชรบูรณ์" id = "เพชรบูรณ์"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=เพชรบูรณ์" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#แพร่" id = "แพร่"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=แพร่" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#ภูเก็ต" id = "ภูเก็ต"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=ภูเก็ต" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#มหาสารคาม" id = "มหาสารคาม"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=มหาสารคาม" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#มุกดาหาร" id = "มุกดาหาร"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=มุกดาหาร" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#แม่ฮ่องสอน" id = "แม่ฮ่องสอน"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=แม่ฮ่องสอน" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#ยโสธร" id = "ยโสธร"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=ยโสธร" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#ยะลา" id = "ยะลา"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=ยะลา" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#ร้อยเอ็ด" id = "ร้อยเอ็ด"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=ร้อยเอ็ด" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#ระนอง" id = "ระนอง"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=ระนอง" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#ระยอง" id = "ระยอง"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=ระยอง" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#ราชบุรี" id = "ราชบุรี"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=ราชบุรี" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#ลพบุรี" id = "ลพบุรี"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=ลพบุรี" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#ลำปาง" id = "ลำปาง"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=ลำปาง" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#ลำพูน" id = "ลำพูน"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=ลำพูน" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#เลย" id = "เลย"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=เลย" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#ศรีสะเกษ" id = "ศรีสะเกษ"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=ศรีสะเกษ" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#สกลนคร" id = "สกลนคร"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=สกลนคร" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#สงขลา" id = "สงขลา"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=สงขลา" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#สตูล" id = "สตูล"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=สตูล" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#สมุทรปราการ" id = "สมุทรปราการ"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=สมุทรปราการ" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#สมุทรสงคราม" id = "สมุทรสงคราม"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=สมุทรสงคราม" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#สมุทรสาคร" id = "สมุทรสาคร"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=สมุทรสาคร" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#สระแก้ว" id = "สระแก้ว"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=สระแก้ว" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#สระบุรี" id = "สระบุรี"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=สระบุรี" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#สิงห์บุรี" id = "สิงห์บุรี"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=สิงห์บุรี" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#สุโขทัย" id = "สุโขทัย"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=สุโขทัย" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#สุพรรณบุรี" id = "สุพรรณบุรี"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=สุพรรณบุรี" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#สุราษฎร์ธานี" id = "สุราษฎร์ธานี"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=สุราษฎร์ธานี" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#สุรินทร์" id = "สุรินทร์"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=สุรินทร์" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#หนองคาย" id = "หนองคาย"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=หนองคาย" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#หนองบัวลำภู" id = "หนองบัวลำภู"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=หนองบัวลำภู" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#หัวหิน (ประจวบคีรีขันธ์)" id = "หัวหิน (ประจวบคีรีขันธ์)"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=หัวหิน (ประจวบคีรีขันธ์)" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#หาดใหญ่" id = "หาดใหญ่"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=หาดใหญ่" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#อ่างทอง" id = "อ่างทอง"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=อ่างทอง" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#อำนาจเจริญ" id = "อำนาจเจริญ"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=อำนาจเจริญ" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#อุดรธานี" id = "อุดรธานี"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=อุดรธานี" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#อุตรดิตถ์" id = "อุตรดิตถ์"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=อุตรดิตถ์" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#อุทัยธานี" id = "อุทัยธานี"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=อุทัยธานี" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+      <a href="#อุบลราชธานี" id = "อุบลราชธานี"><iframe src= "https://www.tmd.go.th/weatherForecast7DaysWidget?province=อุบลราชธานี" height="400" width="1120" scrolling="no" frameborder="0"></iframe></a>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="w3-row-padding w3-center w3-padding-64 w3-row" id="pricing" >
+    <h2>Storm Reports</h2>
+    <p>เส้นทางเดินพายุ</p><br>
+    <div class="w3-row">
+      <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme">
+          <p class="w3-xlarge">Storm Map</p>
+        </li>
+        <br>
+        <iframe src="https://www.tmd.go.th/StromTrack" height="600" width="1100" scrolling="no" frameborder=""></iframe>
+        </li>
+      </ul>
+    </div>
+
+    </div>
+</div>
+
+
+<div class="w3-row-padding w3-center w3-padding-64 w3-theme-l1" id="contact" style="width:100%;height:745px;">
+    <h2>Earthquakes</h2>
+    <br><br>
+    <div class="w3-center">
+      <iframe src= "https://www.tmd.go.th/weatherEarthquakeWidget" height="470" width="1100" scrolling="no" frameborder="0"></iframe>
+
+    </div>
+</div>
+
+<!-- Image of location/map -->
+<img src="ben.jpg" class="w3-image w3-greyscale-min" style="width:100%;">
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
+  <h3>Project By</h3>
+  <br>
+  <h5>นาย พีรพัฒน์ ขาวเจริญ</h5>
+  <h5>นางสาว สโรชา ชุ่มชาติ</h5>
+
+  <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   
+    <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+</footer>
+
+<script>
+// Script for side navigation
+function w3_open() {
+  var x = document.getElementById("mySidebar");
+  x.style.width = "300px";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+
+// Close side navigation
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>
